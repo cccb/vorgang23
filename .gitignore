@@ -1,0 +1,15 @@
+
+*.swp
+*.swo
+__pycache__/
+venv/
+
+src/*.sqlite*
+
+etc/jea/sandbox.conf
+
+.data/
+
+.DS_Store/
+
+.mypy_cache
