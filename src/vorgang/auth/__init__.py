@@ -1,3 +1,3 @@
 
-default.app.config = "vorgang.auth.apps.AuthAppConfig"
+default_app_config = "vorgang.auth.apps.AuthAppConfig"
 

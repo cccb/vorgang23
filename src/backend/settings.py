@@ -80,6 +80,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 
+    "vorgang.auth",
+
     "rest_framework",
 ]
 
