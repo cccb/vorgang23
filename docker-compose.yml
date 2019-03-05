@@ -1,0 +1,26 @@
+
+version: "3"
+
+services:
+
+    db:
+        image: postgres
+        volumes:
+            - .data/postgres:/var/lib/postgresql/data
+
+    app:
+        build: .
+        # We launch the server externally, as we want to perform
+        # actions with manage.py
+        command: sleep infinity
+        ports:
+            - "8000:8000"
+
+        depends_on:
+            - db
+
+        volumes:
+            - .:/code
+
+        user: ${DOCKER_UID}
+

@@ -6,7 +6,6 @@ venv/
 
 src/*.sqlite*
 
-etc/jea/sandbox.conf
 
 .data/
 
