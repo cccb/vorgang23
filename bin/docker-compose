@@ -1,0 +1,9 @@
+#!/bin/bash
+
+DOCKER=docker
+COMPOSE=docker-compose
+
+export DOCKER_UID=$(id -u):$(id -g)
+
+exec $COMPOSE $@ 
+

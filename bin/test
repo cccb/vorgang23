@@ -1,0 +1,17 @@
+#!/bin/bash
+
+DOCKER=docker
+COMPOSE=docker-compose
+CONTAINER=vorgang23_app
+
+# Check if app is running
+if [ -z $($DOCKER ps -q --filter "name=$CONTAINER") ]; then
+    echo "ERROR: Container '$CONTAINER' is not running."
+    echo "       Please start the required containers using 'docker-compose up'"
+    exit -1
+fi
+
+export DOCKER_UID=$(id -u):$(id -g)
+
+$COMPOSE exec app pytest -v -s src/$@
+
