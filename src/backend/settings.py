@@ -25,7 +25,7 @@ import configparser
 #
 # These are the defaults, for use with a local docker development setup.
 # It is _NOT RECOMMENDED_ to edit this file.
-# Use the etc/jea/sandbox.conf configuration to change settings.
+# Use the etc/vorgang23/sandbox.conf configuration to change settings.
 #
 DEFAULT_SECRET_KEY = "DDnlf39@rmf&yeb7i(6)++jf20i30n23bl8&9xg-7+p_"
 DEFAULT_CONFIG = {
@@ -56,16 +56,16 @@ config.read([
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config["jea"].getboolean("debug", True)
+DEBUG = config["vorgang"].getboolean("debug", True)
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config["jea"]["secret_key"]
+SECRET_KEY = config["vorgang"].get("secret_key")
 if SECRET_KEY == DEFAULT_SECRET_KEY and not DEBUG:
     print("ERROR: You must change the secret key in a production environment")
     sys.exit(-1)
 
 
-ALLOWED_HOSTS = config["jea"].get("allowed_hosts", "").split(",")
+ALLOWED_HOSTS = config["vorgang"].get("allowed_hosts", "").split(",")
 
 # Application definition
 
@@ -178,11 +178,11 @@ LOGGING = {
     "loggers": {
         "django": {
             "handlers": ["console"],
-            "level": config["jea"]["log_level"],
+            "level": config["vorgang"]["log_level"],
         },
-        "jea": {
+        "vorgang": {
             "handlers": ["console"],
-            "level": config["jea"]["log_level"],
+            "level": config["vorgang"]["log_level"],
         },
     },
 }
