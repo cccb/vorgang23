@@ -81,6 +81,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     "vorgang.auth",
+    "vorgang.repository",
+    "vorgang.bureau",
 
     "rest_framework",
 ]
