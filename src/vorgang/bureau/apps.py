@@ -5,9 +5,9 @@ from django.apps import AppConfig
 
 logger = logging.getLogger(__name__)
 
-class RepositoryAppConfig(AppConfig):
-    name = "vorgang.repository"
-    label = "repositorty"
+class BureauAppConfig(AppConfig):
+    name = "vorgang.bureau"
+    label = "bureau"
 
     verbose_name = "Vorgang23 :: Bureau"
 

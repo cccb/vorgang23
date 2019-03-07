@@ -7,7 +7,7 @@ The repository manages tasks and categories
 from django.db import models
 from django.utils import timezone
 
-from vorgang.conductor import models as conductor_models
+from vorgang.bureau import models as bureau_models
 
 
 class Category(models.Model):
@@ -37,7 +37,7 @@ class Task(models.Model):
         Category,
         on_delete=models.PROTECT)
 
-    agents = models.ManyToManyField(conductor_models.Agent)
+    agents = models.ManyToManyField(bureau_models.Agent)
 
     # Meta
     created_at = models.DateTimeField(default=timezone.now)
